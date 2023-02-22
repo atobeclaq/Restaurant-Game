@@ -1,3 +1,11 @@
+class MenuObject {
+  constructor(name, cost, energycost, image) {
+    this.name = name
+    this.cost = cost
+    this.energycost = energycost
+    this.image = image
+  }   
+}
 function Menu(dishes){
   var dialog = createDiv();
     dialog.position(20, 250);
@@ -77,3 +85,4 @@ function drawdialogbutton(){
     Menu(dishes)
   });
 }
+

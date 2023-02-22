@@ -1,16 +1,11 @@
 var dialogbutton
 var lightblue = "rgb(0, 153, 255,0.5)"
 var lightpink = "rgba(255, 182, 193, 0.5)"
-var lightgrey = "rgba(200, 200, 200, 0.5)"
+var lightgrey = "rgba(200, 200, 200, 0.8)"
 var prepare = "True"
 
-let randomIndex = -100
-let index
-let customercolor = -1
-let ordersuccess = -1
-let showShapes = true;
-let fail
-let img
+// let ordersuccess = -1
+
 let emptychairlocation
 
 
@@ -19,35 +14,37 @@ var startY = 0;
 var endX = 9;
 var endY = 9;
 var objects = [];
-let stop
+
 
 let randomVariable = -1
 let dishdelay = 0
 var currentStep = 0;
 let mood = 'happy'
+let tableImg;
+let chairImg;
+let kgymImg;
+let kgymSitImg;
 
 var dishes = [      
-  {name: "Pizza", cost: "$10", energycost: 10, image: "images/pizza.jpeg"},      
-  {name: "Sushi", cost: "$15", energycost: 10, image: "images/sushi.jpeg"},      
-  {name: "Steak", cost: "$20", energycost: 10, image: "images/steak.jpeg"}    
+  {name: "Pork Curry", cost: "$10", energycost: 10, image: "images/porkcurry-removebg-preview.png"},      
+  {name: "Sushi", cost: "$15", energycost: 10, image: "images/sushi-removebg-preview.png"},      
+  {name: "Milk", cost: "$20", energycost: 10, image: "images/milk-removebg-preview.png"}    
 ];
 
 var dishescopy = [      
-  {name: "Pizza", cost: "$10", energycost: 10, image: "images/pizza.jpeg"},      
-  {name: "Sushi", cost: "$15", energycost: 10, image: "images/sushi.jpeg"},      
-  {name: "Steak", cost: "$20", energycost: 10, image: "images/steak.jpeg"}    
+  {name: "Pork Curry", cost: 10, energycost: 10, image: "images/porkcurry-removebg-preview.png"},      
+  {name: "Sushi", cost: 15, energycost: 10, image: "images/sushi-removebg-preview.png"},      
+  {name: "Milk", cost: 20, energycost: 10, image: "images/milk-removebg-preview.png"}    
 ];
-var energy = 100; // starting energy value
-let energyMax = 100; // maximum energy value
-let x = 0;
-let y = 0;
-let direction = 1;
-
+// let dishescopy = [...dishes]; 
 function preload(){
   for(var i=0; i < dishes.length; i++){
     dishescopy[i].image=  loadImage( dishescopy[i].image)
   }
-  img = loadImage("images/table.jpeg");
+ tableImg = loadImage("images/table1-removebg-preview.png")
+ chairImg = loadImage("images/chair-removebg-preview.png")
+ kgymImg = loadImage("images/kgym_Cropped-removebg-preview.png")
+ kgymSitImg = loadImage("images/kgym-sit-removebg-preview.png")
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -58,6 +55,7 @@ function setup() {
 function draw() {
   background(250);
   drawfloor()
+  // image(tableImg, 50, 50, 200, 200);
 
   for (let i = 0; i < chairxarray.length; i++) {
     drawchairandtable(chairxarray[i][0],chairxarray[i][1])   
@@ -66,22 +64,22 @@ function draw() {
   drawdialogbutton()
   drawpreparebutton()
   drawEnergyBar();
+  drawMoneyBox()
 
-  if (prepare == "False" && (random(1) < 0.01 ) ){
-    
-  
-    customercolor = random (0,255)
-    // randomIndex = Math.floor(random(dishes.length));
-    // console.log(" Customer entering....",randomIndex)
+  if (prepare == "False" && (random(1) < 0.01 ) ){  
     emptychairlocation = checkemptychair()
     if (emptychairlocation != -1 )
     {
+      intimate = localStorage.getItem("kgym")
+      if( intimate == null )
+      { intimate = 0
+        localStorage.setItem("kgym", 0)
+      }
 
-      objects.push( new Customer(emptychairlocation,  Math.floor(random(dishes.length)), -1));
+      objects.push( new Customer(emptychairlocation,  Math.floor(random(dishes.length)), -1, intimate));
+      
       console.log("empty chair found : ", emptychairlocation)
       chairxarray[emptychairlocation][2] = 1
-     
-     stop = 1
     }
   }
   if (prepare == "False" )
@@ -89,12 +87,12 @@ function draw() {
     console.log("start drawing customer ...")   
     for (var i = 0; i < objects.length; i++){
       if (objects[i].invalid == 0)
-      {movingCustomer( objects[i], i)}
+      {movingCustomer( objects[i])}
     } 
 
   } 
-}
 
+}
 
 function order(dishname){
   let dishStock = localStorage.getItem(dishname) || 0;
