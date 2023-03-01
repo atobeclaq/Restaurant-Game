@@ -44,6 +44,7 @@ function generateCustomer(customer){
         updateMoney(parseInt(dishescopy[customer.orderNumber].cost))
         
         localStorage.setItem("kgym", parseInt(customer.intimate) + 5)
+        localStorage.setItem("exp", parseInt(exp)+5)
         showpopupmsg("Order succeed Intimate Increased 5", customer)
       }
       if (value == 1){

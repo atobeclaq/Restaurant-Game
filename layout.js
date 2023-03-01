@@ -85,8 +85,8 @@ function drawMoneyBox(){
     text("Earnings: $" + 0, 350, 80);
     localStorage.setItem("profit", 0)
   }
-
-  text("Level: " + 0, 550, 80);
+  checkIfNeedLevelUp()
+  text("Level: " + level_current, 550, 80);
 }
 
 function showpopupmsg(msg, customer){

@@ -25,17 +25,7 @@ let chairImg;
 let kgymImg;
 let kgymSitImg;
 
-var dishes = [      
-  {name: "Pork Curry", cost: "$10", energycost: 10, image: "images/porkcurry-removebg-preview.png"},      
-  {name: "Sushi", cost: "$15", energycost: 10, image: "images/sushi-removebg-preview.png"},      
-  {name: "Milk", cost: "$20", energycost: 10, image: "images/milk-removebg-preview.png"}    
-];
 
-var dishescopy = [      
-  {name: "Pork Curry", cost: 10, energycost: 10, image: "images/porkcurry-removebg-preview.png"},      
-  {name: "Sushi", cost: 15, energycost: 10, image: "images/sushi-removebg-preview.png"},      
-  {name: "Milk", cost: 20, energycost: 10, image: "images/milk-removebg-preview.png"}    
-];
 // let dishescopy = [...dishes]; 
 function preload(){
   for(var i=0; i < dishes.length; i++){
@@ -108,3 +98,38 @@ function order(dishname){
   }
 }
 
+// function checkLocalStorage(nameOfStorage){
+//   let check = localStorage.getItem(nameOfStorage)
+//   if (check == null){
+//     check = 
+//   }
+// }
+
+// const foodConfig = {
+//   pizza:{
+//     level:1,
+//     money:5
+//   },
+//   malatang:{
+//     level:2,
+//     money:15
+//   }
+// }
+// foodConfig[foodtheywanttobyy].money;
+// let playerstate = LoadPlayerState();
+// // every 15 seconds: SavePlayerState(playerState);
+
+
+// let playerState = {
+//   unlocked:{
+//     pizza:true,
+//   }
+// }
+
+// function SavePlayerState(data) {
+//   localStorage.setItem('playerState',JSON.stringify(data));
+// }
+
+function LoadPlayerState(){
+  return JSON.parse(localStorage.getItem('playerState')??'{}');
+}

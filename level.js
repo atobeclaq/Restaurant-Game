@@ -17,16 +17,23 @@ var Level = [
     {level: 16, experience: 320000}
 ]
 var level_current
+var exp
 function getCurrentLevel(){
     level_current = localStorage.getItem("level")
+    exp = localStorage.getItem("exp")
     if (level_current == null){
-        localStorage.setItem("level", 0)
+        localStorage.setItem("level", 1)
         localStorage.setItem("exp", 0)
-        level_current = 0
+        level_current = 1
+        exp = 0
     }
-    return level_current
-}
 
-function levelUp(){
     
+}
+function checkIfNeedLevelUp(){
+    getCurrentLevel()
+    if (Level[level_current-1].experience <= exp && level_current <= 15 ){
+        level_current = parseInt(level_current) + 1
+        localStorage.setItem("level", level_current)
+    }
 }
