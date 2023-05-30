@@ -25,6 +25,26 @@ To get started, clone the repository using Git:
 
 ```git clone https://github.com/atobeclaq/Restaurant-Game.git```
 
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot1.png)
+*Caption for Screenshot 1*
+
+![Screenshot 2](screenshots/screenshot2.png)
+*Caption for Screenshot 2*
+
+![Screenshot 3](screenshots/screenshot3.png)
+*Caption for Screenshot 3*
+
+![Screenshot 4](screenshots/screenshot4.png)
+*Caption for Screenshot 4*
+
+![Screenshot 5](screenshots/screenshot5.png)
+*Caption for Screenshot 5*
+
+![Screenshot 6](screenshots/screenshot6.png)
+*Caption for Screenshot 6*
+
 
 ## Usage
 
