@@ -27,23 +27,13 @@ To get started, clone the repository using Git:
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png?raw=true "Optional Title")
-*Caption for Screenshot 1*
+![Screenshot1](https://github.com/atobeclaq/Restaurant-Game/assets/31129897/70f44479-5f59-4d07-8149-1d8a145df720)
+![Screenshot2](https://github.com/atobeclaq/Restaurant-Game/assets/31129897/a06326ec-6c1e-4cc5-b041-604a4562fff5)
+![Screenshot3](https://github.com/atobeclaq/Restaurant-Game/assets/31129897/6772ddda-859a-422b-aae0-64dcf5386a5c)
+![Screenshot4](https://github.com/atobeclaq/Restaurant-Game/assets/31129897/6f191d56-b525-47a9-9816-b17674c5a43b)
+![Screenshot5](https://github.com/atobeclaq/Restaurant-Game/assets/31129897/6b205d62-2f52-43d9-80cd-10f690cb44bf)
+![Screenshot6](https://github.com/atobeclaq/Restaurant-Game/assets/31129897/cba5ae83-f904-49f7-937d-38f2f30b71b5)
 
-![Screenshot 2](screenshots/screenshot2.png)
-*Caption for Screenshot 2*
-
-![Screenshot 3](screenshots/screenshot3.png)
-*Caption for Screenshot 3*
-
-![Screenshot 4](screenshots/screenshot4.png)
-*Caption for Screenshot 4*
-
-![Screenshot 5](screenshots/screenshot5.png)
-*Caption for Screenshot 5*
-
-![Screenshot 6](screenshots/screenshot6.png)
-*Caption for Screenshot 6*
 
 
 ## Usage
