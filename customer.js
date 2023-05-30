@@ -18,9 +18,9 @@ class Customer {
 
 function generateCustomer(customer){
 
-    // console.log ("start generating customer .. walking to ", customer.seatNumber)
+    console.log ("start generating customer .. walking to ", customer.seatNumber,customer.orderNumber)
     
-    image(kgymImg, 12.5 + customer.bodyx, customer.bodyy-25, 100,250)
+    image(kgymImg, 12.5 + customer.bodyx, customer.bodyy-25, 200,250)
     image(dishescopy[customer.orderNumber].image, customer.bodyx-10, customer.bodyy-100, 100, 70);
 
     // console.log("x y  :",bodyx, bodyy)
@@ -72,7 +72,7 @@ function generateCustomer(customer){
         customer.invalid = 1
         chairxarray[customer.seatNumber][2] = 0
     }
-    image(kgymImg, customer.bodyx, customer.bodyy, 100,250)
+    image(kgymImg, customer.bodyx, customer.bodyy, 200,250)
 
     customer.bodyx -= 1
 
@@ -89,6 +89,7 @@ function generateCustomer(customer){
     }
     else if(customer.leave == 1){generateLeaveCustomer(customer, mood)}
     else{
+      console.log("before sending out", customer.orderNumber)
       generateCustomer(customer)
       customer.bodyx = customer.vx+customer.bodyx
       customer.bodyy = customer.vy+customer.bodyy

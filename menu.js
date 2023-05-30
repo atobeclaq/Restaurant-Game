@@ -1,8 +1,7 @@
 var dishes = [      
   {name: "Pork Curry", cost: "$10", energycost: 10, image: "images/porkcurry-removebg-preview.png", unlockNeeded: [1, 0]} ,      
   {name: "Sushi", cost: "$15", energycost: 10, image: "images/sushi-removebg-preview.png", unlockNeeded: [1, 0]},      
-  {name: "Milk", cost: "$20", energycost: 10, image: "images/milk-removebg-preview.png", unlockNeeded: [1, 0]},
-  {name: "", cost: "$20", energycost: 10, image: "images/milk-removebg-preview.png", unlockNeeded: [3, 100]},
+  {name: "Milk", cost: "$20", energycost: 10, image: "images/milk-removebg-preview.png", unlockNeeded: [1, 0]}
 
 ];
 

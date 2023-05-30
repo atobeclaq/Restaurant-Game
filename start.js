@@ -26,15 +26,25 @@ let kgymImg;
 let kgymSitImg;
 
 
-// let dishescopy = [...dishes]; 
-function preload(){
-  for(var i=0; i < dishes.length; i++){
-    dishescopy[i].image=  loadImage( dishescopy[i].image)
+function preload() {
+
+  for (var i = 0; i < dishes.length; i++) {
+    console.log(dishescopy[i].image);
+    dishescopy[i].image = loadImage(dishescopy[i].image, onLoadImageSuccess, onLoadImageError);
   }
- tableImg = loadImage("images/table1-removebg-preview.png")
- chairImg = loadImage("images/chair-removebg-preview.png")
- kgymImg = loadImage("images/kgym_Cropped-removebg-preview.png")
- kgymSitImg = loadImage("images/kgym-sit-removebg-preview.png")
+  
+  tableImg = loadImage("images/table1-removebg-preview.png", onLoadImageSuccess, onLoadImageError);
+  chairImg = loadImage("images/chair-removebg-preview.png", onLoadImageSuccess, onLoadImageError);
+  kgymImg = loadImage("images/little_pricess-bkremove.png", onLoadImageSuccess, onLoadImageError);
+  kgymSitImg = loadImage("images/little_princess_sit.png", onLoadImageSuccess, onLoadImageError);
+}
+
+function onLoadImageSuccess(image) {
+  console.log("Image loaded successfully:", image);
+}
+
+function onLoadImageError(event) {
+  console.error("Error loading image:", event);
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -67,7 +77,6 @@ function draw() {
       }
 
       objects.push( new Customer(emptychairlocation,  Math.floor(random(dishes.length)), -1, intimate));
-      
       console.log("empty chair found : ", emptychairlocation)
       chairxarray[emptychairlocation][2] = 1
     }
@@ -77,7 +86,8 @@ function draw() {
     console.log("start drawing customer ...")   
     for (var i = 0; i < objects.length; i++){
       if (objects[i].invalid == 0)
-      {movingCustomer( objects[i])}
+      {console.log(dishes.length,"the order id is", objects[i].orderNumber)
+        movingCustomer( objects[i])}
     } 
 
   } 
