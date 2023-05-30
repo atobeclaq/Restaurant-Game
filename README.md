@@ -27,7 +27,7 @@ To get started, clone the repository using Git:
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 1](screenshots/screenshot1.png?raw=true "Optional Title")
 *Caption for Screenshot 1*
 
 ![Screenshot 2](screenshots/screenshot2.png)
