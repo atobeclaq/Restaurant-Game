@@ -17,23 +17,33 @@ var Level = [
     {level: 16, experience: 320000}
 ]
 var level_current
+var level
 var exp
+var money
 function getCurrentLevel(){
-    level_current = localStorage.getItem("level")
-    exp = localStorage.getItem("exp")
-    if (level_current == null){
-        localStorage.setItem("level", 1)
-        localStorage.setItem("exp", 0)
-        level_current = 1
-        exp = 0
-    }
+    db.collection('Profile').get().then((snapshot) => {
+        snapshot.forEach((doc) => {
+            var profileData = doc.data();
+
+            level = profileData.level 
+            exp = profileData.exp
+            money = profileData.Money
+          });
+    })
+    return level, exp
 
     
 }
 function checkIfNeedLevelUp(){
-    getCurrentLevel()
-    if (Level[level_current-1].experience <= exp && level_current <= 15 ){
-        level_current = parseInt(level_current) + 1
-        localStorage.setItem("level", level_current)
+    level, exp = getCurrentLevel()
+    var documentRef = db.collection("Profile").doc("profile_1");
+
+    for (var i = level+1; i < 16; i++){
+        if (exp >= Level[i].experience && exp < Level[i +1].experience){
+            // console.log("Check if need up-level", exp, Level[i].experience, Level[i +1].experience)
+            documentRef.update({ level: i + 1 })
+            break
+        }
     }
+
 }

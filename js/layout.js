@@ -77,21 +77,14 @@ function drawMoneyBox(){
   fill(lightgrey);
   textSize(25);
   currentMoney = localStorage.getItem("profit")
-  
-  if (currentMoney)
-  { text("Earnings: $" + currentMoney, 350, 80);}
-  else
-  {
-    text("Earnings: $" + 0, 350, 80);
-    localStorage.setItem("profit", 0)
-  }
   checkIfNeedLevelUp()
-  text("Level: " + level_current, 550, 80);
+  text("Earnings: $" + money, 350, 80);
+  text("Level: " + level, 550, 80);
 }
 
 function showpopupmsg(msg, customer){
   let popup = createDiv(msg);
-  console.log("should pop up")
+  // console.log("should pop up")
   popup.position(chairxarray[customer.seatNumber][0]+40,chairxarray[customer.seatNumber][1]-20);
   popup.style("background-color", "#ffcc00");
   popup.style("padding", "10px");

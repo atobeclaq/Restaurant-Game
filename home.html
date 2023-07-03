@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script> -->
+    <script src = "https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-    <!-- <script src="js/easystar-0.2.1.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -23,5 +23,22 @@
   <script src = "js/layout.js"></script>
   <script src = "js/customer.js"></script>
   <script src = "js/level.js"></script>
+  <script src = "js/mongo_func.js"></script>
+  <script>
+
+    var firebaseConfig = {
+      apiKey: "*********",
+      authDomain: "*********",
+      projectId: "*********",
+      storageBucket: "*********",
+      messagingSenderId: "*********",
+      appId: "1*********",
+      measurementId: "*********"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    
+  </script>
   </body>
 </html>
