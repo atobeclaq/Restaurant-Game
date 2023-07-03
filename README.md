@@ -17,7 +17,7 @@ Welcome to the Restaurant Game project! This is a restaurant game where players 
 ## Progression and Rewards
 
 - As the restaurant serves more customers, it will gain experience and level up.
-- Leveling up unlocks new dishes and furniture options (currently under development).
+- Leveling up unlocks new dishes and furniture options.
 
 ## Installation
 
