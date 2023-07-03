@@ -18,6 +18,7 @@ Welcome to the Restaurant Game project! This is a restaurant game where players 
 
 - As the restaurant serves more customers, it will gain experience and level up.
 - Leveling up unlocks new dishes and furniture options.
+- All the data will be stored in firebase
 
 ## Installation
 
